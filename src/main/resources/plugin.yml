@@ -1,0 +1,9 @@
+name: PlayerBox
+main: cn.mgazul.playerbox.Main
+version: @version@
+author: Mgazul
+api-version: 1.13
+depend: [PF-CoreLib]
+
+commands:
+    box:

@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+group = pluginGroup
+version = pluginVersion
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+
+dependencies {
+    compile files('lib/spigot-1.13.2.jar')
+    compile files('lib/PF-CoreLib-1.0.jar')
+    compile files('lib/PlaceholderAPI-2.9.2.jar')
+}
+
+import org.apache.tools.ant.filters.ReplaceTokens
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        filter ReplaceTokens, tokens: [version: version]
+    }
+}
